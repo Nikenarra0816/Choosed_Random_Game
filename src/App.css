@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
 
 :root {
-  --primary: #032541;
-  --secondary: #21d07a;
+  --primary:#45aaf2;
+  --secondary:#fed330;
   --white: #fff;
 }
 
@@ -288,4 +288,32 @@ header .nav-links li:last-child {
   color: #c4c4c4;
   font-size: 3rem;
   text-align: center;
+}
+
+
+.searchbox {
+	display: block;
+  width: 500px;
+  height: 50px;
+  padding: 15px;
+  margin-left: 80px;
+  margin-top: -60px;
+
+	border: none;
+	outline: none;
+	background: none;
+
+	background-color: #EEE;
+	border-radius: 8px;
+
+	color: black;
+	font-size: 20px;
+	font-weight: 300;
+
+	transition: 0.4s ease-out;
+}
+
+.searchbox:focus {
+  box-shadow: 0px 0px 8px 3px #45aaf2;
+  opacity: 0.10;
 }
