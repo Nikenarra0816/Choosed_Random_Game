@@ -20,6 +20,22 @@ export const Header = () => {
             </li>
 
             <li>
+              <Link to="/spell">Spell</Link>
+            </li>
+
+            <li>
+              <Link to="/enchantment">Enchantment</Link>
+            </li>
+
+            <li>
+              <Link to="/weapon">Weapon</Link>
+            </li>
+
+            <li>
+              <Link to="/heropower">Hero Power</Link>
+            </li>
+
+            <li>
               <Link to="/add" className="btn btn-main">
                 + Add
               </Link>
