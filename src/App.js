@@ -9,39 +9,29 @@ import { Heropower } from "./components/Heropower";
 import { Weapon } from "./components/Weapon";
 import { Enchantment } from "./components/Enchantment";
 import { Add } from "./components/Add";
-import Search from './components/Search'
+import {Axios} from 'axios'
 
 import "./App.css";
 import "./lib/font-awesome/css/all.min.css";
 
 function App() {
 
-  const [state, setState] = useState({
-    s: "",
-    results: [],
-    selected: {}
-  });
-  const apiurl = "http://www.omdbapi.com/?apikey=faf7e5bb";
-
-  const search = (e) => {
-    if (e.key === "Enter") {
-      axios(apiurl + "&s=" + state.s).then(({ data }) => {
-        let results = data.Search;
-
-        setState(prevState => {
-          return { ...prevState, results: results }
-        })
-      });
-    }
-  }
   
-  const handleInput = (e) => {
-    let s = e.target.value;
-
-    setState(prevState => {
-      return { ...prevState, s: s }
-    });
+const options = {
+  method: 'GET',
+  url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/info',
+  headers: {
+    'x-rapidapi-key': '9508137d1bmshce0f4ba39773c5fp1d4e2ajsnf883a41af1a9',
+    'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com'
   }
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+  
 
   return (
     <Router>
@@ -69,16 +59,10 @@ function App() {
             <Heropower />
           </Route>
         </Switch>
-     <main>
-     <Search handleInput={handleInput} search={search} />
-     </main>
+     
 
     </Router>
-
-   
-
-
-  );
-}
+)};
+  
 
 export default App;
