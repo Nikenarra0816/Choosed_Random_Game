@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Hero = () => {
+export const Add = () => {
     return (
         <div>
-            <h1>Hero Page</h1>
+            
         </div>
     )
 }
