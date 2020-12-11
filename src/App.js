@@ -4,8 +4,11 @@ import { Header } from "./components/Header";
 import { Minion } from "./components/Minion";
 import { Hero } from "./components/Hero";
 import { Add } from "./components/Add";
+import { Result } from "./components/Result";
 import "./App.css";
 import "./lib/font-awesome/css/all.min.css";
+
+import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
   return (
