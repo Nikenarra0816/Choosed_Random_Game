@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Add = () => {
+export const Minion = () => {
     return (
         <div>
-            <h1>Add Page</h1>
+            
         </div>
     )
 }
