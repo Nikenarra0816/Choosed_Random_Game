@@ -1,28 +1,6 @@
-import React, { useState } from "react";
-import { Result } from "./Result";
+import React from "react";
 
 export const Add = () => {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState([]);
-
-  const onChange = (e) => {
-    e.preventDefault();
-
-    setQuery(e.target.value);
-
-
-    fetch(
-        `https://omgvamp-hearthstone-v1.p.rapidapi.com/info'?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          if (!data.errors) {
-            setResults(data.results);
-          } else {
-            setResults([]);
-          }
-        });
-    };
 
   return (
     <div className="add-page">
@@ -32,20 +10,9 @@ export const Add = () => {
           <input
             type="text"
             placeholder="Search for a game"
-            value={query}
-            onChange={onChange}
           />
         </div>
 
-        {results.length > 0 && (
-          <ul className="results">
-            {results.map((movie) => (
-              <li key={movie.id}>
-                <Result movie={movie} />
-              </li>
-            ))}
-          </ul>
-        )}
       </div>
     </div>
   </div>
