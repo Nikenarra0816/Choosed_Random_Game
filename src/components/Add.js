@@ -97,10 +97,32 @@ class Add extends React.Component {
           <div className="container">
             <div className="add-content">
               <div className="input-wrapper">
-                <input type="text"            
-                placeholder="Search"/>
+                <input type="text" placeholder="Search" />
                 {data.Basic.map((v) => {
-                  return <p>{v.name}</p>;
+                  return (
+                    <div className="card">
+                      <p>{v.name}</p>
+                      <div className="controls">
+                        <button className="btn">Add to Hero</button>
+                      </div>
+                      <div className="controls2">
+                        <button className="btn">Add to Million</button>
+                      </div>
+                      <div className="controls3">
+                        <button className="btn">Add to Spell</button>
+                      </div>
+                      <div className="controls4">
+                        <button className="btn">Add to Enchantment</button>
+                      </div>
+                      <div className="controls5">
+                        <button className="btn">Add to Weapon</button>
+                      </div>
+                      <div className="controls6">
+                        <button className="btn">Add to Hero Power</button>
+                      </div>
+
+                    </div>
+                  );
                 })}
               </div>
             </div>

@@ -22,6 +22,7 @@ body {
 @media (min-width: 768px) {
   .container {
     width: 750px;
+    margin: 0px;
   }
 }
 
@@ -56,6 +57,8 @@ body {
   transition: all 0.3s ease;
   line-height: 1.1;
 }
+
+
 
 .btn:hover {
   background-color: #1aa762;
@@ -121,7 +124,7 @@ header .nav-links li:last-child {
 .add-content {
   padding: 50px 0;
   max-width: 600px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .add-content .input-wrapper input {
@@ -132,6 +135,8 @@ header .nav-links li:last-child {
   border: none;
   color: var(--white);
   font-size: 1.25rem;
+  /* margin-left: 20px; */
+  margin-bottom: 20px;
 }
 
 .results {
@@ -182,6 +187,39 @@ header .nav-links li:last-child {
 
 .result-card .controls button {
   margin-right: 10px;
+}
+
+.controls {
+  margin-left: 225px;
+  margin-top: -45px;
+}
+.controls2 {
+  margin-left: 380px;
+  margin-top: -37px;
+}
+.controls3 {
+  margin-left: 555px;
+  margin-top: -37px;
+}
+.controls4 {
+  margin-left: 715px;
+  margin-top: -37px;
+}
+.controls5 {
+  margin-left:945px;
+  margin-top: -37px;
+}
+.controls6 {
+  margin-left: 1120px;
+  margin-top: -37px;
+}
+
+
+
+.con {
+  height: 20px;
+  width: 20px;
+  background-color: #1aa762;
 }
 
 /* Movie Page */
@@ -315,4 +353,19 @@ header .nav-links li:last-child {
 .searchbox:focus {
   box-shadow: 0px 0px 8px 3px #45aaf2;
   opacity: 0.10;
+}
+
+.card {
+  height: 50px;
+    margin: 5;
+    /* padding: 2px; */
+    width:1334px;
+    border-radius: 10px;
+    /* background-color: #fed330; */
+}
+.card-button {
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  color: red;
 }
