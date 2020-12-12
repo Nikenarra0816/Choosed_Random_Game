@@ -59,16 +59,13 @@
 import React from "react";
 // import "./styles.css";
 
-
-
- class Add extends React.Component {
+class Add extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       data: {},
-      isLoading: true
+      isLoading: true,
     };
-  
   }
 
   componentDidMount() {
@@ -76,14 +73,14 @@ import React from "react";
       method: "GET",
       headers: {
         "x-rapidapi-key": "8ca2b61598mshcbf02117ba11b57p16b0b8jsn50617050e449",
-        "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com"
-      }
+        "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
+      },
     })
       .then((res) => res.json())
       .then((res) => {
         this.setState({
           data: res,
-          isLoading: false
+          isLoading: false,
         });
       })
       .catch((err) => {
@@ -96,11 +93,19 @@ import React from "react";
     if (isLoading) return <p>Loading...</p>;
     if (!isLoading)
       return (
-        <React.Fragment>
-          {data.Basic.map((v) => {
-            return <p>{v.name}</p>;
-          })}
-        </React.Fragment>
+        <div className="add-page">
+          <div className="container">
+            <div className="add-content">
+              <div className="input-wrapper">
+                <input type="text"            
+                placeholder="Search"/>
+                {data.Basic.map((v) => {
+                  return <p>{v.name}</p>;
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
       );
   }
 }
