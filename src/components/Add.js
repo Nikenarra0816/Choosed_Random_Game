@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ResultCard } from "../components/ResultCard";
 
 export const Add = () => {
   const [query, setQuery] = useState("");
@@ -13,21 +14,19 @@ export const Add = () => {
       method: "GET",
       headers: {
         "x-rapidapi-key": "8ca2b61598mshcbf02117ba11b57p16b0b8jsn50617050e449",
-        "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com"
-      }
+        "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
+      },
     })
-
       .then((res) => res.json())
       .then((data) => {
+        // console.log(data);
         if (!data.errors) {
           setResults(data.results);
         } else {
           setResults([]);
         }
       });
-  
   };
-
 
   return (
     <div className="add-page">
@@ -46,7 +45,7 @@ export const Add = () => {
             <ul className="results">
               {results.map((movie) => (
                 <li key={movie.id}>
-                  {/* <ResultCard movie={movie} /> */}
+                  <ResultCard movie={movie} />
                 </li>
               ))}
             </ul>
