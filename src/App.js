@@ -24,7 +24,7 @@ function App() {
           <Route path="/add">
             <Add />
           </Route>
-          <Route path="/Monion">
+          <Route path="/Minion">
             <Minion />
           </Route>
           <Route path="/Spell">
@@ -44,6 +44,5 @@ function App() {
     
   );
  }
-
 
 export default App;

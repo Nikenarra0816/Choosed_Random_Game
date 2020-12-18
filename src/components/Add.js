@@ -47,7 +47,9 @@ class Add extends React.Component {
       return (
         <div className="add-page">
           <div className="container">
-            <div className="add-content">
+            <div className="row">
+                <div className="col-6">
+                <div className="add-content">
               <div className="input-wrapper">
                 <input type="text" placeholder="Search" />
                     <div className="card p-3 bg-white shadow rounded">
@@ -59,6 +61,14 @@ class Add extends React.Component {
                     </div>
               </div>
             </div>
+            <div className="col-6">
+              <div className="card">
+                
+              </div>
+            </div>
+                </div>
+            </div>
+            
           </div>
         </div>
       );
