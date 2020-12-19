@@ -10,7 +10,7 @@ import { Enchantment } from "./components/Enchantment";
 import Add  from "./components/Add";
 import Hooks from "./components/Hooks";
 
-import "./App.css";
+import './App.css'
 import "./lib/font-awesome/css/all.min.css";
 
 
@@ -25,6 +25,7 @@ function App() {
           <Route path="/add">
             <Add />
           </Route>
+
           <Route path="/hooks">
             <Hooks />
           </Route>
@@ -48,6 +49,5 @@ function App() {
     
   );
  }
-
 
 export default App;

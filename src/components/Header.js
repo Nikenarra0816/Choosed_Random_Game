@@ -36,7 +36,7 @@ export const Header = () => {
             </li>
 
             <li>
-              <Link to="/add" className="btn btn-main">
+              <Link to="/add" className="nav-btn btn-main">
                 + Add
               </Link>
             </li>
