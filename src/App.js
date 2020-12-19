@@ -7,7 +7,8 @@ import { Spell } from "./components/Spell";
 import { Heropower } from "./components/Heropower";
 import { Weapon } from "./components/Weapon";
 import { Enchantment } from "./components/Enchantment";
-import Add from "./components/Add";
+import Add  from "./components/Add";
+import Hooks from "./components/Hooks";
 
 import './App.css'
 import "./lib/font-awesome/css/all.min.css";
@@ -24,7 +25,11 @@ function App() {
           <Route path="/add">
             <Add />
           </Route>
-          <Route path="/Minion">
+
+          <Route path="/hooks">
+            <Hooks />
+          </Route>
+          <Route path="/Monion">
             <Minion />
           </Route>
           <Route path="/Spell">
