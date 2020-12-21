@@ -6,7 +6,7 @@ import Spell from './components/Spell';
 import Heropower from './components/Heropower';
 import Weapon from './components/Weapon';
 import Enchantment from './components/Enchantment';
-import { Mycard } from './components/Mycard';
+import Mycard from './components/Mycard';
 import Hero from './components/Hero';
 import Add from './components/Add';
 import Hooks from './components/Hooks';

@@ -1,6 +1,4 @@
 import {
-  FILTER_ENHANCE,
-  FILTER_HERO,
   GET_ALL_CARDS,
   GET_CARDS,
   START_LOADING,
@@ -13,7 +11,7 @@ const INITIAL_STATE = {
   isLoading: false,
 };
 
-export default (state = INITIAL_STATE, action) => {
+const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case GET_CARDS:
       return {
@@ -39,3 +37,5 @@ export default (state = INITIAL_STATE, action) => {
       return state;
   }
 };
+
+export default reducer;
