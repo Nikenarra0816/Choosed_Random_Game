@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import { connect } from 'react-redux';
+import { getAllCards } from '../actions';
 
 class Add extends React.Component {
   constructor(props) {
@@ -14,20 +16,8 @@ class Add extends React.Component {
   }
 
   async componentDidMount() {
-    const res = await fetch(
-      "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards",
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-key":
-            "8ca2b61598mshcbf02117ba11b57p16b0b8jsn50617050e449",
-          "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
-        },
-      }
-    );
-
-    const value = await res.json();
-    this.setState({ isLoading: false, data: value });
+    const { getAllCards, data } = this.props;
+    data.length === 0 && getAllCards();
   }
 
   getRandomNumber(max) {
@@ -35,50 +25,50 @@ class Add extends React.Component {
   }
 
   handleClick() {
-    const getRandom = this.getRandomNumber(this.state.data.Basic.length);
+    const { data } = this.props;
+    const getRandom = this.getRandomNumber(data.length);
     this.setState({ loadType: true });
     setTimeout(() => {
-      alert(
-        `Anda Mendapatkan Kartu Type ${this.state.data.Basic[getRandom].type}`
-      );
-      localStorage.setItem("id", this.state.data.Basic[getRandom].cardId);
-      localStorage.setItem("name", this.state.data.Basic[getRandom].name);
-      localStorage.setItem("type", this.state.data.Basic[getRandom].type);
+      alert(`Anda Mendapatkan Kartu Type ${data[getRandom].type}`);
+      localStorage.setItem('id', data[getRandom].cardId);
+      localStorage.setItem('name', data[getRandom].name);
+      localStorage.setItem('type', data[getRandom].type);
       this.setState({ loadType: false });
     }, 3000);
   }
 
   render() {
-    const { data, isLoading, loadType } = this.state;
+    const { data, isLoading } = this.props;
+    const { loadType } = this.state;
     if (isLoading) return <p>Loading...</p>;
     console.log(data);
     if (!isLoading)
       return (
-        <div className="add-page">
-          <div className="container">
-            <div className="row">
-              <div className="col-6">
-                <div className="add-content">
-                  <div className="input-wrapper">
-                    <input type="text" placeholder="Search" />
-                    <div className="card p-3 bg-white shadow rounded">
-                      <div className="card-header">Get Your Card Here</div>
-                      <div className="card-body">
+        <div className='add-page'>
+          <div className='container'>
+            <div className='row'>
+              <div className='col-6'>
+                <div className='add-content'>
+                  <div className='input-wrapper'>
+                    <input type='text' placeholder='Search' />
+                    <div className='card p-3 bg-white shadow rounded'>
+                      <div className='card-header'>Get Your Card Here</div>
+                      <div className='card-body'>
                         <h3>Click Here To Get Your Card Type</h3>
                         <button
                           className={`btn btn-primary ${
-                            loadType ? "disabled" : ""
+                            loadType ? 'disabled' : ''
                           }`}
                           onClick={this.handleClick}
                         >
-                          Click{" "}
+                          Click{' '}
                         </button>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="col-6">
-                  <div className="card"></div>
+                <div className='col-6'>
+                  <div className='card'></div>
                 </div>
               </div>
             </div>
@@ -88,4 +78,9 @@ class Add extends React.Component {
   }
 }
 
-export default Add;
+const mapStateToProps = (state) => ({
+  isLoading: state.isLoading,
+  data: state.dataAll,
+});
+
+export default connect(mapStateToProps, { getAllCards })(Add);
